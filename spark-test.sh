@@ -76,3 +76,11 @@ it_equalizes_at_midtier_on_same_data() {
 
   test $graph = '▅▅▅▅'
 }
+
+it_charts_min_and_max() {
+  data="1,2,3,4,5"
+  graph="$($spark -m 2 -M 4 $data)"
+
+  test $graph = '▁▁▄██'
+
+}
